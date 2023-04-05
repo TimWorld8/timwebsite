@@ -1,0 +1,53 @@
+/* Center the login form */
+form {
+    margin: 0 auto;
+    width: 30%;
+  }
+  
+  /* Style the input fields */
+  /* Apply the same styles to all text and password input elements */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+    margin: 8px 0;
+      display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+  
+  /* Set a style for the submit button */
+  button[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  /* Add a hover effect for buttons */
+  button[type=submit]:hover {
+    opacity: 0.8;
+  }
+  
+  /* Add a red border to inputs with errors */
+  input.error {
+    border-color: red;
+  }
+  
+  /* Style error messages */
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  /* Style registration link */
+  .register {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
