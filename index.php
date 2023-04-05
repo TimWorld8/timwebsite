@@ -18,6 +18,7 @@ include('server.php'); ?>
           <h3>
                <?php 
                echo $_SESSION['success'];
+               echo $_SESSION['lastid'];
                unset($_SESSION['success']);
                ?>
           </h3>

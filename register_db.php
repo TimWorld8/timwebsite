@@ -43,9 +43,11 @@
       $password = md5($password_1);
 
       $sql = "INSERT INTO user (username,email,password) VALUES('$username','$email','$password')";
-      mysqli_query($conn,$sql);
-
-      $_SESSION['username'] = $username;
+      if ($conn->query($sql) === TRUE) {
+        $last_id = $conn->insert_id;
+      //mysqli_query($conn,$sql);
+      $_SESSION['lastid'] = $last_id ;
+      }
       $_SESSION['success'] = "You are now logged in";
      /// header('location: index.php');
       header("Location: index.php");
