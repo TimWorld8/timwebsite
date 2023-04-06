@@ -1,6 +1,7 @@
 <?php 
 session_start();
 include('server.php');
+include 'login_db.php';
  ?>
 
 <!DOCTYPE html>
@@ -8,7 +9,7 @@ include('server.php');
 <head>
      <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-<title>Login Page</title>
+<title>Credit Page</title>
 
 <link rel="stylesheet" href="style.css">
 </head> 
@@ -26,9 +27,9 @@ include('server.php');
         </nav>
     </header>
 <div class="header">
-    <h2>Login</h2>
+    <h2>Credit</h2>
 </div>
-<form action="login_db.php" method="post" >
+<form action="credit_db.php" method="post" >
 <?php include('errors.php'); ?>
     <?php if (isset($_SESSION['error'])): ?>
      <div class='error'>
@@ -41,18 +42,13 @@ include('server.php');
      </div>
      <?php endif ?>
     <div class="input-group">
-      <label for="username">Username</label>  
-      <input type="text" name="username">
-    </div>
-    <div class="input-group">
-      <label for="password">Password</label>  
-      <input type="password" name="password">
+      <label for="credit">Credit</label>  
+      <input type="text" name="credit">
     </div>
     <div class="input-group">
       
-      <button type="submit" name="login_user" class="btn">Login</button>
+      <button type="submit" name="add_credit" class="btn">Add</button>
     </div>
-    <p>Not yet a member? <a href="register.php">Sign up</a></p>
 </form>
 </body> 
 </html>

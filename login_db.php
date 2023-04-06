@@ -20,9 +20,13 @@
         $password = md5($password);
         $query = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
         $result = mysqli_query($conn,$query);
+        
+        $credit_old = "SELECT c.credit FROM credit c JOIN user u ON u.id = c.user_id WHERE u.username = '$username'";
+        $results = mysqli_query($conn,$credit_old);
 
         if(mysqli_num_rows($result)==1){
             $_SESSION['username'] = $username;
+            $_SESSION['credit'] = $credit_add;
             $_SESSION['success']="Your are now logged in" ;
             header("Location: index.php");
         }else{

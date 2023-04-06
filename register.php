@@ -11,9 +11,22 @@ include('server.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Page</title>
     <link rel="stylesheet" href="style.css">
+    <?php include('server.php'); ?>
+    <header class="top-bar">
+        <div class="logo">My World</div>
+        <div class="use"><?php echo $_SESSION['username'];
+                            echo" ";  echo "Credit : ";
+                               echo $_SESSION['credit'];?></div> <!-- Add your Credit-->
+        <nav class="nav-links">
+        <a href="index.php">Home</a>
+            <a href="login.php">Login</a>
+            <a href="credit.php">Credit</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
 </head>
 <body>
-    <?php include('server.php'); ?>
+
 
     <div class="container">
         <div class="header">
@@ -50,7 +63,7 @@ include('server.php');
             <div class="input-group">
                 <button type="submit" name="reg_user" class="btn">Register</button>
             </div>
-            <p>Already a member? <a href="login.php">Sign in</a></p>
+            <p>Already a member? <a href="login.php">  Sign in</a></p>
         </form>
     </div>
 </body>

@@ -44,9 +44,13 @@
 
       $sql = "INSERT INTO user (username,email,password) VALUES('$username','$email','$password')";
       if ($conn->query($sql) === TRUE) {
-        $last_id = $conn->insert_id;
+        $last_id = $conn->insert_id ;
       //mysqli_query($conn,$sql);
+      $credit_new = "INSERT INTO  credit (user_id,credit)
+      VALUES('$last_id',0)";
+      $result = mysqli_query($conn,$credit_new);
       $_SESSION['lastid'] = $last_id ;
+      $_SESSION['username'] = $username ;
       }
       $_SESSION['success'] = "You are now logged in";
      /// header('location: index.php');
