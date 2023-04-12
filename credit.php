@@ -1,7 +1,6 @@
 <?php 
 session_start();
 include('server.php');
-include 'login_db.php';
  ?>
 
 <!DOCTYPE html>
@@ -18,7 +17,7 @@ include 'login_db.php';
         <div class="logo">My World</div>
         <div class="use"><?php echo $_SESSION['username'];
                             echo" ";  echo "Credit : ";
-                               echo $_SESSION['credit'];?></div> <!-- Add your Credit-->
+                               echo $_SESSION['old_c'];?></div> <!-- Add your Credit-->
         <nav class="nav-links">
             <a href="index.php">Home</a>
             <a href="login.php">Login</a>

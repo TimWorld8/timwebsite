@@ -21,8 +21,10 @@
 
        $credit_push = "INSERT INTO credit (user_id, credit) SELECT u.id, last_credit.credit + $credit_add_int FROM ( SELECT c.user_id, c.credit FROM credit c JOIN user u ON c.user_id = u.id WHERE u.username =  '$username' ORDER BY c.id DESC LIMIT 1 ) AS last_credit JOIN user u ON last_credit.user_id = u.id";
         
-        $result = mysqli_query($conn,$credit_push);
+       if ($conn->query($credit_push) === TRUE) {
+                $last_id = $conn->insert_id ;
             header("Location: credit.php");
+            $_SESSION['old_c']= $result;
         }else{
             array_push($errors,"Wrong username/password combination");
             $_SESSION['error']="Wrong username/password try agin" ;
@@ -30,6 +32,6 @@
         }
 
   }
-
+  }
 
 ?> 

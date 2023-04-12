@@ -16,8 +16,8 @@ include('server.php'); ?>
         <div class="logo">My World</div>
         <div class="use"><?php echo $_SESSION['username'];
                             echo" ";  echo "Credit : ";
-                               echo $_SESSION['credit'];
-                               echo $_SESSION['lastid'];?></div> <!-- Add your Credit-->
+                              
+                              ?></div> <!-- Add your Credit-->
         
         <nav class="nav-links">
             <a href="index.php">Home</a>
